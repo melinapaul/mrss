@@ -21,3 +21,19 @@ Thank you for considering contributing to the Laravel framework! The contributio
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+
+
+Ruby with DevKit
+NodeJs
+Wamp
+Git
+Cygwin
+Atom
+Composer
+
+
+
+terminal1 : cd to <mrss_folder> and run "php artisan serve"
+terminal2: cd to <mrss_folder>\public and run "bundle exec compass watch"
+terminal3 : cd to <mrss_folder> to run artisan commands
