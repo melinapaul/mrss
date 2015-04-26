@@ -1,6 +1,8 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Parse\ParseClient;
+use Config;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +13,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		//session_start();
+		ParseClient::initialize(Config::get('app.Parse.ApplicationID'), Config::get('app.Parse.RESTAPIKEy'), Config::get('app.Parse.MasterKey'));
 	}
 
 	/**

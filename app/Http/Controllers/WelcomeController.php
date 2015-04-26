@@ -1,5 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use Config;
+use Parse\ParseUser;
+use Parse\ParseObject;
+use Parse\ParseQuery;
+use Parse\ParseClient;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,6 +36,30 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		if ($currentUser = ParseUser::getCurrentUser())
+		{
+			if(!is_null($currentUser->get("dp")))
+			{
+				$url = $currentUser->get("dp")->getURL();
+			}
+			else
+			{
+				$url = null;
+			}
+			if($currentUser->get("role") == Config::get("app.roles")[0])
+			{
+				return view('patient.home', ["user" => $currentUser, "url" => $url]);
+			}
+			if($currentUser->get("role") == Config::get("app.roles")[1])
+			{
+				return view('doctor.home', ["user" => $currentUser, "url" => $url]);
+			}
+			if($currentUser->get("role") == Config::get("app.roles")[2])
+			{
+				return view('nurse.home', ["user" => $currentUser, "url" => $url]);
+			}
+      //return redirect('/');
+    }
 		return view('welcome');
 	}
 

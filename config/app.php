@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	'debug' => env('APP_DEBUG',"TRUE"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,5 +194,17 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 	],
+
+	'Parse' => [
+		'ApplicationID'		=> 'IdhgW6Z68DdoFdAD6wG6rjj73mGt4T0AsnO4xiEU',
+		'RESTAPIKEy'			=> 'evGktR1XyKP2yQLzLjB9MId0mCEwSw6Vu0ar1l81',
+		'MasterKey'				=> 'dcWBzTkBksnjjX4bbgfWm26mPEcOR9e10f8HHyGx'
+	],
+
+	'roles' => [
+		"Patient",
+		"Doctor",
+		"Pharmacist/Nurse"
+		]
 
 ];

@@ -1,11 +1,16 @@
 @extends('app')
 
+@section('menu')
+@include('menu.loggedout')
+@endsection
+
+
 @section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
+				<div class="panel-heading"><h2>Log In</h2></div><br>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -22,9 +27,9 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">Username</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="text" class="form-control" name="username" value="{{ old('username') }}">
 							</div>
 						</div>
 
@@ -34,6 +39,7 @@
 								<input type="password" class="form-control" name="password">
 							</div>
 						</div>
+
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
@@ -47,9 +53,12 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
+								<button type="submit" class="ui purple button">Login</button>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+								<!-- <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a> -->
+
+								<a href="{{ url('/auth/register') }}" class="ui purple right button">Register</a>
+
 							</div>
 						</div>
 					</form>

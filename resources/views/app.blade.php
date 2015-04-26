@@ -4,12 +4,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>CSPC 542 Project</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/semantic/dist/semantic.min.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,10 +21,13 @@
 	<![endif]-->
 </head>
 <body>
+	<div class="bg">
+		<img src="{{asset('images/bg_light.jpg')}}" style="width:100%">
+	</div>
 	<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Medical Record System</a></h1>
+      <h1><a href="#">Medicalize</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -30,29 +35,22 @@
 
   <section class="top-bar-section">
     <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active"><a href="{{ url('/') }}">Home</a></li>
-      <li class="has-dropdown">
-        <a href="#">Menu</a>
-        <ul class="dropdown">
-					@if (Auth::guest())
-          <li><a href="{{ url('/auth/login') }}">Login</a></li>
-          <li class="active"><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-					<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-					@endif
-        </ul>
-      </li>
-    </ul>
+		@yield('menu')
 
   </section>
 </nav>
-
+<div class="clear"></div>
 	@yield('content')
-
+<div class="clear" style="height:56px"></div>
+<div class="footer">
+	CPSC 542 Project | Melina Devaraj & Amruta Ghangale
+</div>
 	<!-- Scripts -->
-	<script src="{{ asset('/js/app.js') }}"></script>
+	<script src="{{ asset('/semantic/dist/semantic.min.js') }}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ asset('/bower_components/foundation/js/foundation.min.js') }}"></script>
+	<script src="{{ asset('/js/app.js') }}"></script>
+
 </body>
 </html>
