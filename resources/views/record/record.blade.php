@@ -406,7 +406,7 @@ function drawBackgroundColor() {
       data.addRows([
 
         @foreach (array_reverse($temperatures) as $temperature)
-        ['{{$pulse->getCreatedAt()->format('Y-m-d H:i:s')}}',{{$temperature->get('temperature')}}],
+        ['{{$temperature->getCreatedAt()->format('Y-m-d H:i:s')}}',{{$temperature->get('temperature')}}],
         @endforeach
       ]);
       var options = {
@@ -435,7 +435,7 @@ function drawBackgroundColor() {
       data.addRows([
 
         @foreach (array_reverse($bps) as $bp)
-        ['{{$weight->getCreatedAt()->format('Y-m-d H:i:s')}}',{{$bp->get('systolic')}},{{$bp->get('diastolic')}}],
+        ['{{$bp->getCreatedAt()->format('Y-m-d H:i:s')}}',{{$bp->get('systolic')}},{{$bp->get('diastolic')}}],
         @endforeach
       ]);
       var options = {
