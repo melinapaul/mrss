@@ -21,12 +21,13 @@
             @if(!is_null($url))
             <img src="{{$url}}">
             @else
-            <i class="user icon"></i>
+            <i class="user icon" style="font-size:128px;"></i>
             @endif
           </div>
           <div class="content">
             <a class="header" style="font-size: 24px;">{{$user->get('name')}}</a><br>
             <div class="meta" style="font-size: 16px;">
+              <div>Doctor ID: <b>{{$user->getObjectId()}}</b></div><br>
               <div><b><i class="fa fa-at"></i> Email:</b> {{$user->get('email')}}</div><br>
               <div><b><i class="fa fa-calendar"></i> Date of Birth:</b> {{$user->get('dob')}}</div><br>
               <div><b><i class="fa fa-user"></i> Gender:</b> {{$user->get('gender')}}</div><br>
