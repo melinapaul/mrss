@@ -42,6 +42,8 @@ Route::get('patient/appointments/cancel/{id}', 'PatientController@cancelappointm
 Route::get('patient/record/{id}', 'RecordController@record');
 Route::get('record/notes/add/{id}', 'RecordController@notes');
 Route::post('record/notes/add/{id}', 'RecordController@addnotes');
+Route::get('record/notes/delete/{id}', 'RecordController@deletenotes');
+Route::get('record/scan/delete/{id}', 'RecordController@deletescan');
 Route::get('record/scan/add/{id}', 'RecordController@scan');
 Route::post('record/scan/add/{id}', 'RecordController@addscan');
 Route::get('record/prescription/add/{id}', 'RecordController@prescription');
