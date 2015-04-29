@@ -233,6 +233,18 @@ class DoctorController extends Controller {
 		return view('doctor.profile', ["doctor" => $doctor, "url"=>$url]);
 	}
 
+	public function deleteappointment($id)
+	{
+		$query = new ParseQuery("Appointment");
+		$appointment = $query->get($id);
+		$currentUser = ParseUser::getCurrentUser();
+		if($currentUser->getObjectId() == $appointment->get('doctorid'))
+		{
+			$appointment->destroy();
+		}
+		return redirect('/doctor/appointments');
+	}
+
 
 
 }

@@ -31,10 +31,10 @@
               {{$appointment->get('date')}} at {{$appointment->get('time')}}
             </div>
           </div>
-          <div class="ui bottom attached button">
+          <a href="{{URL('doctor/appointments/delete/'.$appointment->getObjectId())}}"><div class="ui bottom attached button">
             <i class="remove icon"></i>
             Delete
-          </div>
+          </div></a>
         </div>
         @endforeach
       </div>
@@ -54,10 +54,10 @@
               {{$appointment->get('date')}} at {{$appointment->get('time')}}
             </div>
           </div>
-          <div class="ui bottom attached button">
+          <a href="{{URL('doctor/appointments/delete/'.$appointment->getObjectId())}}"><div class="ui bottom attached button">
             <i class="remove icon"></i>
             Delete
-          </div>
+          </div></a>
         </div>
         @endforeach
       </div>
