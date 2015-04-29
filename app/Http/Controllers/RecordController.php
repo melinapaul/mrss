@@ -78,6 +78,7 @@ class RecordController extends Controller {
 			"weights" => $weight,
 			"pulses" => $pulse,
 			"scans" => $scans,
+			"currentuser" => $currentUser
     ]);
 	}
 
