@@ -65,8 +65,10 @@
                 @foreach($comments as $comment)
                 <div class="comment">
                   <a class="avatar">
-                    @if( !is_null($userquery->equalTo('objectId',$comment->get('user_id'))->find()[0]->get('dp') !=null))
+                    @if( !is_null($userquery->equalTo('objectId',$comment->get('user_id'))->find()[0]->get('dp')))
                     <img src="{{$userquery->equalTo('objectId',$comment->get('user_id'))->find()[0]->get('dp')->getURL()}}">
+                    @else
+                    <i class="user icon" style="font-size:32px;"></i>
                     @endif
                   </a>
                   <div class="content" style="margin-top:0px; padding:0px;">
