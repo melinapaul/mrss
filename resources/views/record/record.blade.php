@@ -189,9 +189,7 @@
             </div>
             <div class="description">
               <p>{{$scan->get('note')}}</p>
-              {{$scan->get('doctorId')}}<br>
-              {{$user->getObjectId()}}
-              @if($scan->get('doctorId') == $user->getObjectId())
+              @if($scan->get('doctorId') == $currentuser->getObjectId())
               <a class="ui red button right" href="{{ url('/record/scan/delete/'.$scan->getObjectId()) }}"><i class="fa fa-trash-o"></i> Delete Scan</a>
               @endif
             </div>
@@ -219,7 +217,7 @@
               <div class="header">Dr. {{$doctor->equalTo('objectId',$note->get('doctorId'))->find()[0]->get('name')}}</div>
               <div class="description">
                 {{$note->get('note')}}
-                @if( $note->get('doctorId') ==$user->getObjectId())
+                @if( $note->get('doctorId') ==$currentuser->getObjectId())
                 <a class="ui red button right" href="{{ url('/record/notes/delete/'.$note->getObjectId()) }}"><i class="fa fa-trash-o"></i> Delete Note</a>
                 @endif
               </div>
