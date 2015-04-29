@@ -8,7 +8,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="large-12 columns">
-      <h1>Add A Scan <a href="{{ url('/patient/record/'.$patientid) }}" class="ui purple right button"> <i class="fa fa-chevron-left"></i> Back to pateint record</a></h1>
+      <h1>Add Scan <a href="{{ url('/patient/record/'.$patientid) }}" class="ui purple right button"> <i class="fa fa-chevron-left"></i> Back to Pateint Record</a></h1>
       <div class="ui divider"></div>
     </div>
   </div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-          <label class="col-md-4 control-label">upload file</label>
+          <label class="col-md-4 control-label">Upload file</label>
           <div class="col-md-6">
             <input type="file" name="scan" accept=".jpg,.jpeg,.png">
           </div>
