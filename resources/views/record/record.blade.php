@@ -189,6 +189,8 @@
             </div>
             <div class="description">
               <p>{{$scan->get('note')}}</p>
+              {{$scan->get('doctorId')}}<br>
+              {{$user->getObjectId()}}
               @if($scan->get('doctorId') == $user->getObjectId())
               <a class="ui red button right" href="{{ url('/record/scan/delete/'.$scan->getObjectId()) }}"><i class="fa fa-trash-o"></i> Delete Scan</a>
               @endif
