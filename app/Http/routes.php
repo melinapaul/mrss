@@ -29,6 +29,7 @@ Route::get('doctor/profile/edit', 'DoctorController@editprofile');
 Route::post('doctor/profile/edit', 'DoctorController@updateprofile');
 Route::get('doctor/profile/{id}', 'DoctorController@profile');
 
+
 Route::get('patient/appointments', 'PatientController@appointments');
 Route::get('patient/prescriptions', 'PatientController@prescriptions');
 Route::get('patient/profile/edit', 'PatientController@editprofile');
@@ -54,6 +55,16 @@ Route::post('record/vitalpulse/add/{id}', 'RecordController@addpulse');
 
 Route::get('nurse/prescriptions', 'NurseController@prescriptions');
 Route::get('nurse/patients', 'NurseController@patients');
+
+Route::get('doctor/blog/post', 'BlogController@blog');
+Route::post('doctor/blog/post', 'BlogController@post');
+Route::get('doctor/blog/update/{id}', 'BlogController@edit');
+Route::post('doctor/blog/update/{id}', 'BlogController@update');
+Route::get('blogs', 'BlogController@all');
+Route::get('blog/{id}', 'BlogController@view');
+Route::post('blog/comment/add/{id}', 'BlogController@addcomment');
+Route::get('blog/comment/delete/{id}', 'BlogController@deletecomment');
+Route::get('blog/delete/{id}', 'BlogController@delete');
 /*
 Route::controllers([
 	'auth' => 'Auth\AuthController',

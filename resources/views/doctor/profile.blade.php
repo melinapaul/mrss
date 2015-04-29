@@ -26,7 +26,10 @@
             @endif
           </div>
           <div class="content">
-            <a class="header" style="font-size: 24px;">{{$doctor->get('name')}}</a><br>
+            <a class="header" style="font-size: 24px;">{{$doctor->get('name')}}
+
+            </a><br>
+
             <div class="meta" style="font-size: 16px;">
               <div>Doctor ID: <b>{{$doctor->getObjectId()}}</b></div><br>
               <div><b><i class="fa fa-at"></i> Email:</b> {{$doctor->get('email')}}</div><br>
@@ -51,5 +54,6 @@
 
 
 </div><div class="clear" style="min-heiight:12px;"></div><div class="clear" style="min-heiight:12px;"></div>
+
 
 @endsection

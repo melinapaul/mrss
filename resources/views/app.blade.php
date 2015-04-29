@@ -50,7 +50,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="{{ asset('/bower_components/foundation/js/foundation.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/foundation/js/vendor/modernizr.js') }}"></script>
+	<script src="{{ asset('/bower_components/foundation/js/foundation/foundation.clearing.js') }}"></script>
 	<script src="{{ asset('/js/app.js') }}"></script>
-
 </body>
 </html>
