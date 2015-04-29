@@ -8,7 +8,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="large-12 columns">
-      <h1>Add Prescription <a href="{{ url('/patient/record/'.$patientid) }}" class="ui purple right button"> <i class="fa fa-chevron-left"></i> Back to pateint record</a></h1>
+      <h1>Add Prescription <a href="{{ url('/patient/record/'.$patientid) }}" class="ui purple right button"> <i class="fa fa-chevron-left"></i> Back to Pateint Record</a></h1>
 
       <div class="ui divider"></div>
     </div>
