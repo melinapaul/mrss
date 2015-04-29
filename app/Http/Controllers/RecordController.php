@@ -496,6 +496,48 @@ class RecordController extends Controller {
 
 		return redirect('home');
   }
+  
+  public function deletescan($id)
+  {
+		if ($currentUser = ParseUser::getCurrentUser())
+		{
+			if($currentUser->get("role") != Config::get("app.roles")[1])
+			{
+        return redirect('/auth/login');
+			}
+    }
+
+    $query = new ParseQuery("Scan");
+		try {
+		  $result = $query->get($id);
+			$result->destroy();
+			return redirect('patient/record/'.$result->get('patientid'));
+		} catch (ParseException $ex) {
+		}
+
+		return redirect('home');
+  }
+
+	public function deletenotes($id)
+  {
+		if ($currentUser = ParseUser::getCurrentUser())
+		{
+			if($currentUser->get("role") != Config::get("app.roles")[1])
+			{
+        return redirect('/auth/login');
+			}
+    }
+
+    $query = new ParseQuery("DoctorNotes");
+		try {
+		  $result = $query->get($id);
+			$result->destroy();
+			return redirect('patient/record/'.$result->get('patientid'));
+		} catch (ParseException $ex) {
+		}
+
+		return redirect('home');
+  }
 
 
 
