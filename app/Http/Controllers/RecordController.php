@@ -497,7 +497,7 @@ class RecordController extends Controller {
 
 		return redirect('home');
   }
-  
+
   public function deletescan($id)
   {
 		if ($currentUser = ParseUser::getCurrentUser())
@@ -511,7 +511,6 @@ class RecordController extends Controller {
     $query = new ParseQuery("Scan");
 		try {
 		  $result = $query->get($id);
-		  if($result->get('doctorId') == $currentUser->getObjectId())
 			$result->destroy();
 			return redirect('patient/record/'.$result->get('patientid'));
 		} catch (ParseException $ex) {
@@ -533,7 +532,6 @@ class RecordController extends Controller {
     $query = new ParseQuery("DoctorNotes");
 		try {
 		  $result = $query->get($id);
-		  if($result->get('doctorId') == $currentUser->getObjectId())
 			$result->destroy();
 			return redirect('patient/record/'.$result->get('patientid'));
 		} catch (ParseException $ex) {
