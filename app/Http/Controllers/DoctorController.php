@@ -139,6 +139,15 @@ class DoctorController extends Controller {
 		return view('doctor.patients', ["patients" => $results]);
 	}
 
+	public function all()
+	{
+		$query = new ParseQuery("_User");
+		//$query->containedIn("objectId",$this->getPatients($results));
+		$query->equalTo("role",Config::get("app.roles")[1]);
+		$results = $query->find();
+		return view('doctor.all', ["doctors" => $results]);
+	}
+
 	private function getPatients($results)
 	{
 		$array = array();

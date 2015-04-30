@@ -23,6 +23,7 @@ Route::post('auth/register', 'ParseAuth\AuthController@register');
 
 Route::get('doctor/appointments', 'DoctorController@appointments');
 Route::get('doctor/patients', 'DoctorController@patients');
+Route::get('doctor/all', 'DoctorController@all');
 Route::get('doctor/appointments/add', 'DoctorController@addappointment');
 Route::get('doctor/appointments/delete/{id}', 'DoctorController@deleteappointment');
 Route::post('doctor/appointments/add', 'DoctorController@saveappointment');

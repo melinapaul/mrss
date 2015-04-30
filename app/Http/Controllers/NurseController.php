@@ -48,7 +48,8 @@ class NurseController extends Controller {
 				$query->equalTo('is_dispensed', false);
 				try {
 				  $results = $query->find();
-					return view('nurse.prescriptions', ["prescriptions" => $results]);
+					$doctor = new ParseQuery("_User");
+					return view('nurse.prescriptions', ["prescriptions" => $results, "doctor" => $doctor]);
 				} catch (ParseException $ex) {
 					return redirect('home');
 				}

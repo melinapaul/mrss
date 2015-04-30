@@ -30,7 +30,7 @@
               </div>
               <div class="description">
                 {{$prescription->get('dosage')}}<br>
-                By Dr. {{$prescription->get('doctorId')}}
+                By Dr. {{$doctor->equalTo('objectId',$prescription->get('doctorId'))->find()[0]->get('name')}} 
 
                 <br>
                 @if(is_null($prescription->get('is_dispensed')) || $prescription->get('is_dispensed') == false )
