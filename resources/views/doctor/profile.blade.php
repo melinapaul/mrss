@@ -31,7 +31,7 @@
             </a><br>
 
             <div class="meta" style="font-size: 16px;">
-              <div>Doctor ID: <b>{{$doctor->getObjectId()}}</b></div><br>
+              <div>Doctor ID: <b>{{$doctor->get('regid')}}</b></div><br>
               <div><b><i class="fa fa-at"></i> Email:</b> {{$doctor->get('email')}}</div><br>
               <div><b><i class="fa fa-calendar"></i> Date of Birth:</b> {{$doctor->get('dob')}}</div><br>
               <div><b><i class="fa fa-user"></i> Gender:</b> {{$doctor->get('gender')}}</div><br>
@@ -50,6 +50,33 @@
         </div>
       </div>
     </div>
+
+    @if($ispatient)
+    <div class="panel">
+      Available Appointments
+      <div class="ui divider"></div>
+      @if(count($appointments) == 0)
+      <p>No Appointments Available</p>
+      @endif
+      <div class="ui cards">
+        @foreach ($appointments as $appointment)
+        <div class="green card">
+          <div class="content">
+            <a href="{{url('doctor/profile/'.$appointment->get('doctorid'))}}"><div class="header">Dr. {{$doctor->get('name')}}</div></a>
+            <div class="description">
+              {{$appointment->get('location')}}<br/>
+              {{$appointment->get('date')}} at {{$appointment->get('time')}}
+            </div>
+          </div>
+          <a href="{{ url('/patient/appointments/add/'.$appointment->getObjectId()) }}"><div class="ui bottom attached button">
+            <i class="add icon"></i>
+            Book Appointment
+          </div></a>
+        </div>
+        @endforeach
+      </div>
+    </div>
+    @endif
   </div>
 
 

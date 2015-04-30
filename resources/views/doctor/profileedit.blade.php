@@ -92,6 +92,12 @@
             </div>
           </div>
           <div class="field">
+            <label>Registration Number</label>
+            <div class="ui icon input">
+              <input type="text" placeholder="Registration Number" name="regid" value="{{$user->get('regid')}}">
+            </div>
+          </div>
+          <div class="field">
             <label>About Me</label>
             <div class="ui icon input">
               <textarea name="about" placeholder="About me">{{$user->get('about')}}</textarea>

@@ -108,7 +108,7 @@
 			</div>
 			<div class="doctorpanel">
 				<div class="titlepanel">
-					For Docotors
+					 Doctors
 				</div>
 				<div class="textpanel">
 					Check Medical Records, Add Prescriptions<br> and Manage Appoitments
@@ -117,7 +117,7 @@
 
 			<div class="nursepanel">
 				<div class="titlepanel">
-					For Nurses
+					 Nurses
 				</div>
 				<div class="textpanel">
 					Check vitals, upload scans<br> and dispense prescribed drugs
@@ -126,7 +126,7 @@
 
 			<div class="patientpanel">
 				<div class="titlepanel">
-					For Patients
+					 Patients
 				</div>
 				<div class="textpanel">
 					Manage appointments, review your record<br> and check your prescriptions

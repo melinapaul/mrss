@@ -108,6 +108,15 @@ class DoctorController extends Controller {
 		return $results;
 	}
 
+	private function getAvailableAppointmentsFor($id)
+	{
+		$query = new ParseQuery("Appointment");
+		$query->equalTo("doctorid", $id);
+		$query->containedIn("appointmentfor",[null, ""]);
+		$results = $query->find();
+		return $results;
+	}
+
 	private function getBookedAppointments()
 	{
 		$query = new ParseQuery("Appointment");
@@ -189,6 +198,7 @@ class DoctorController extends Controller {
 		$dob =Request::input('dob');
 		$gender =Request::input('gender');
 		$about =Request::input('about');
+		$regid =Request::input('regid');
 		$qualifications =Request::input('qualifications');
 
 		$user = ParseUser::getCurrentUser();
@@ -200,6 +210,7 @@ class DoctorController extends Controller {
 		$user->set('dob',$dob);
 		$user->set('gender',$gender);
 		$user->set('about',$about);
+		$user->set('regid',$regid);
 		$user->set('qualifications',$qualifications);
 
 		if (Request::hasFile('dp'))
@@ -222,6 +233,16 @@ class DoctorController extends Controller {
 	{
 		$query = new ParseQuery("_User");
 		$doctor = $query->get($id);
+		$is_Patient = false;
+		if($currentUser = ParseUser::getCurrentUser())
+		{
+			if($currentUser->get("role") == Config::get("app.roles")[0])
+			{
+				$is_Patient = true;
+			}
+
+		}
+
 		if(!is_null($doctor->get("dp")))
 		{
 			$url = $doctor->get("dp")->getURL();
@@ -230,7 +251,14 @@ class DoctorController extends Controller {
 		{
 			$url = null;
 		}
-		return view('doctor.profile', ["doctor" => $doctor, "url"=>$url]);
+
+		$appointments = array();
+
+		if($is_Patient)
+		{
+			$appointments = $this->getAvailableAppointmentsFor($id);
+		}
+		return view('doctor.profile', ["doctor" => $doctor, "url"=>$url, "ispatient" => $is_Patient, "appointments" => $appointments]);
 	}
 
 	public function deleteappointment($id)
