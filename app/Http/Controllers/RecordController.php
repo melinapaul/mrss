@@ -140,7 +140,7 @@ class RecordController extends Controller {
 	{
 		if ($currentUser = ParseUser::getCurrentUser())
 		{
-			if($currentUser->get("role") != Config::get("app.roles")[1])
+			if(!($currentUser->get("role") == Config::get("app.roles")[1] || $currentUser->get("role") == Config::get("app.roles")[2]))
 			{
         return redirect('/auth/login');
 			}
@@ -265,7 +265,7 @@ class RecordController extends Controller {
 	{
 		if ($currentUser = ParseUser::getCurrentUser())
 		{
-			if($currentUser->get("role") != Config::get("app.roles")[1])
+			if(!($currentUser->get("role") == Config::get("app.roles")[1] || $currentUser->get("role") == Config::get("app.roles")[2]))
 			{
         return redirect('/auth/login');
 			}
@@ -295,7 +295,7 @@ class RecordController extends Controller {
 	{
 		if ($currentUser = ParseUser::getCurrentUser())
 		{
-			if($currentUser->get("role") != Config::get("app.roles")[1])
+			if(!($currentUser->get("role") == Config::get("app.roles")[1] || $currentUser->get("role") == Config::get("app.roles")[2]))
 			{
         return redirect('/auth/login');
 			}
@@ -324,7 +324,7 @@ class RecordController extends Controller {
 	{
 		if ($currentUser = ParseUser::getCurrentUser())
 		{
-			if($currentUser->get("role") != Config::get("app.roles")[1])
+			if(!($currentUser->get("role") == Config::get("app.roles")[1] || $currentUser->get("role") == Config::get("app.roles")[2]))
 			{
         return redirect('/auth/login');
 			}
@@ -352,7 +352,7 @@ class RecordController extends Controller {
 	{
 		if ($currentUser = ParseUser::getCurrentUser())
 		{
-			if($currentUser->get("role") != Config::get("app.roles")[1])
+			if(!($currentUser->get("role") == Config::get("app.roles")[1] || $currentUser->get("role") == Config::get("app.roles")[2]))
 			{
         return redirect('/auth/login');
 			}
