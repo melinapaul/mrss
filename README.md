@@ -1,39 +1,25 @@
-## Laravel PHP Framework
+##Medicalize
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+###About
+Class project for CPSC 542, California State University, Fullerton.
+Medicalize  is the most enhanced technique which enables the users(patients) to easily make appointments with the doctor’s and obtain best treatment.  
+>Melina Devaraj &  Amruta Ghangale
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+###Installation
+Requirements: [PHP](http://php.net/) and [Composer](https://getcomposer.org/) (dependency manager for PHP)
+Clone this project from [GitHub](https://github.com/melinapaul/mrss).  
+```cd``` into the root of the project folder and run
+```composer install```  
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Use a web server like Apache to serve the application. The root of the web application should be the ```/public/``` folder of the project. Alternatively you can use Laravel's built in server to run the application. To use the built in server, run the command ```php artisan serve``` from the root of the project.
 
-## Official Documentation
+
+###Testing
+To run tests, run the command ```./vendor/bin/phpunit``` from the root of the project.  
+Note: You might need to comment out the line ```session_start();``` from the file ```/bootstrap/app.php``` while running the tests.
+
+
+
+### Official Laravel Documentation
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-
-
-Ruby with DevKit
-NodeJs
-Wamp
-Git
-Cygwin
-Atom
-Composer
-
-
-
-terminal1 : cd to <mrss_folder> and run "php artisan serve"
-terminal2: cd to <mrss_folder>\public and run "bundle exec compass watch"
-terminal3 : cd to <mrss_folder> to run artisan commands
